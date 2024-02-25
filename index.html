@@ -129,8 +129,11 @@
 				<header class="major">
 					<h2>Wo ihr unsere Spiele finden könnt</h2>
 				</header>
-				<img src="images/map_blurred.png" alt="a blurred world map" class="responsive">
-				<div class="text_over_img">Dies ist der Disclaimer, dass man auf Google maps weitergeleitet wird</div>
+				<a id="map_img" href="#map_img" onClick="block()">
+					<img src="images/map_blurred.png" alt="a blurred world map" class="retailer_map">
+				</a>
+				<iframe id="map" class="retailer_map_iframe" width="1000px" height="1000px"></iframe>
+
 
 			</div>
 			<a href="#two" class="goto-next scrolly">Next</a>
@@ -689,6 +692,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/my_own.js"></script>
 
 </body>
 
