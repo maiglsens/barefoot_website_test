@@ -2866,7 +2866,7 @@ button:disabled,
 }
 
 .main .container:before {
-	min-height: calc(100vh - 13em);
+	/*min-height: calc(100vh - 13em);*/
 	content: '';
 	display: inline-block;
 	vertical-align: middle;
@@ -2998,6 +2998,7 @@ button:disabled,
 }
 
 #footer footer {
+	top: 2em;
 	bottom: 2em;
 	color: rgba(0, 0, 0, 0.5);
 	left: 0;
@@ -3494,4 +3495,36 @@ button:disabled,
 	aspect-ratio: 1;
 	display: none;
 	border: 0;
+}
+
+
+/* Horizontal scroll banner for shops*/
+
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.shop_logos {
+	overflow: hidden;
+	padding-top: 6em;
+	white-space: nowrap;
+}
+
+.shop_logos:hover .shop_logos_slide {
+	animation-play-state: paused;
+}
+
+.shop_logos_slide {
+	display: inline-block;
+	animation: 15s slide infinite linear;
+}
+
+.shop_logos_slide img {
+	height: 8em;
+	margin: 0 2em;
 }
