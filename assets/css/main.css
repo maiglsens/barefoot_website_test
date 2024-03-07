@@ -3528,3 +3528,13 @@ button:disabled,
 	height: 8em;
 	margin: 0 2em;
 }
+
+
+
+
+.calc_banner {
+	display: block;
+	overflow: hidden;
+	align-content: center;
+	width: 500%;
+}
