@@ -3530,11 +3530,10 @@ button:disabled,
 }
 
 
-
+/*CalC top banner on CalC site */
 
 .calc_banner {
 	display: block;
 	overflow: hidden;
-	align-content: center;
-	width: 500%;
+	height: 15em;
 }
