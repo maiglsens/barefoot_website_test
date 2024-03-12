@@ -21,6 +21,7 @@
 				</header>
 				<p>Vielen Dank für deine Nachricht. Wir melden uns so schnell es geht bei dir.</p>
 				
+				<a href="index.html#two">Zurück</a>
 			</div>
 		</div>
 	</section>
@@ -35,7 +36,7 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/my_own.js"></script>
 
-    <?php
+<?php
 // Get data from form  
 $name = $_POST['name'];
 $email= $_POST['email'];
@@ -56,8 +57,6 @@ if($email != NULL) {
     mail($to, $subject, $txt, $headers);
 }
  
-// Redirect to
-header("Location:index.html#two");
 ?>
 
 </body>
