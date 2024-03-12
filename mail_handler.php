@@ -21,7 +21,7 @@
 				</header>
 				<p>Vielen Dank für deine Nachricht. Wir melden uns so schnell es geht bei dir.</p>
 				
-				<a href="index.html#two">Zurück</a>
+				<a href="index.html#mail_form">Zurück</a>
 			</div>
 		</div>
 	</section>
