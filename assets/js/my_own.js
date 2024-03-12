@@ -9,7 +9,7 @@ function block() {
 /* Diable mail submit button if email is empty */
 
 function success() {
-    if(document.getElementById("textsend").value==="") { 
+    if(document.getElementById("email").value==="") { 
            document.getElementById('submit_button').disabled = true; 
        } else { 
            document.getElementById('submit_button').disabled = false;
