@@ -6,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 </head>
 
 <body class="is-preload">
@@ -13,6 +14,19 @@
 	<!-- Header -->
 	<section id="header">
 
+		<nav>
+			<ul class='nav-bar'>
+				<input type='checkbox' id='check' />
+				<span class="menu">
+					<li><a href="">Home</a></li>
+					<li><a href="">Chef à la Card</a></li>
+					<li><a href="">Kontakt</a></li>
+					<li><a href="">Über uns</a></li>
+					<label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+				</span>
+				<label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+			</ul>
+		</nav>
 
 		<div class="section_height">
 			<img src="images/logo.png" alt="barefoot games logo of a foot stepping on a yellow die"
@@ -53,6 +67,7 @@
 					Rezepte geboten und eine unbekannte Welt der kulinarischen Wunder eröffnet.</p>
 
 
+				<a class="button calc_button" id="button" href="calc.html">Mehr Infos</a>	
 			</div>
 		</div>
 	</section>
@@ -112,7 +127,7 @@
 					</div>
 					<div class="col-12">
 						<ul class="actions special">
-							<button type="submit" id="submit_button" disabled>Senden</button>
+							<button type="submit" id="button" disabled>Senden</button>
 						</ul>
 					</div>
 				</div>
