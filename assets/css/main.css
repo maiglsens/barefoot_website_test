@@ -3128,15 +3128,6 @@ button:disabled,
 	
 	/* Basic */
 
-
-
-body,
-input,
-select,
-textarea {
-	font-size: 2em;
-}
-
 	h2 {
 		font-size: 1.35em;
 	}
