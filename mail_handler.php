@@ -49,7 +49,7 @@ $subject = "Mail from barefoot contact form";
 // Name = user entered name
 // Email = user entered email
 // Message = user entered message 
-$txt = $name . " schreibt dir.". "\r\nMeine Email = "
+$txt = $name . " schreibt uns.". "\r\nSeine/Ihre Email: "
     . $email . "\r\nNachricht:" . "\r\n\r\n" . $message;
  
 $headers = "From: info@barefoot-games.com";
