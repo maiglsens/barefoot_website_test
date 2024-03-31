@@ -1,0 +1,39 @@
+/* Webfont */
+
+/* noto-serif-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/noto-serif-v23-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+
+/*CalC top banner on CalC site */
+
+/*.calc_banner {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+}
+
+.calc_banner_img {	
+	min-height: 8em;
+	max-height: 15em;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}*/
+
+.calc_header_img {
+    max-width: 20em;
+}
+
+/* Header font */
+
+.calc_header {
+    font-family: Noto Serif, serif;
+    font-size: 70pt;
+    line-height: 95%;
+}
