@@ -3544,7 +3544,7 @@ button:disabled,
 
 /* Burger Menu */
 
-.nav-bar {
+/*.nav-bar {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -3612,6 +3612,7 @@ button:disabled,
     .menu li a {padding: 10px;}
     .open-menu , .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}
+	*/
 
 
 /* Webfont */
@@ -3629,4 +3630,25 @@ button:disabled,
 	font-family: Noto serif, serif;
 	font-size: 25px;
 	font-weight: 600;
+  }
+
+  /* Navigation bar*/
+
+  .navbar {
+	position: fixed;
+	max-height: 10px;
+	max-width: calc(100% - 4em);
+	width: 35em;
+	padding: 5em 2.5em 8em 2.5em;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: red;
+  }
+
+  .navbar_links {
+	display: flex;
+	justify-content: center;
+
   }
