@@ -28,12 +28,17 @@
 
 .calc_header_img {
     max-width: 20em;
+    margin-bottom: 15%;
 }
 
 /* Header font */
 
-.calc_header {
+.calc_font_noto {
     font-family: Noto Serif, serif;
-    font-size: 70pt;
-    line-height: 95%;
+    font-size: 12pt;
+}
+
+.calc_line_spacing_250 {
+    line-height: 250%;
+    margin-bottom: 15%;
 }
