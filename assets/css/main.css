@@ -3531,13 +3531,6 @@ button:disabled,
 }
 
 
-/*CalC top banner on CalC site */
-
-.calc_banner {
-	display: block;
-	overflow: hidden;
-	height: 15em;
-}
 
 
 /* CalC button */
@@ -3619,3 +3612,21 @@ button:disabled,
     .menu li a {padding: 10px;}
     .open-menu , .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}
+
+
+/* Webfont */
+
+/* noto-serif-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/noto-serif-v23-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  .header_style_noto {
+	font-family: Noto serif, serif;
+	font-size: 25px;
+	font-weight: 600;
+  }
