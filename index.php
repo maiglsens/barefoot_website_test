@@ -87,11 +87,7 @@
 				<p>Schon wieder Nudeln mit Pesto? Wieder Tiefkühlpizza? Und schon wieder zum Imbiss um die Ecke, weil
 					dir einfach nichts Neues einfällt, das du kochen könntest?</p>
 				<p>Schluss damit!</p>
-				<p>Chef à la Card ist das Spiel, das dich vom Sofa in die Küche lockt. Ob alleine oder in der Gruppe, ob
-					Einkaufsbummel oder Reste-Essen, mit Chef à la Card wirst du nie wieder einfallslos vor deinem Herd
-					stehen und in leere Töpfe starren. Mit über 60 unterschiedlichen Zutaten und neun
-					Zubereitungsmethoden wird eine nahezu unerschöpfliche Quelle an Kombinationsmöglichkeiten für neue
-					Rezepte geboten und eine unbekannte Welt der kulinarischen Wunder eröffnet.</p>
+				<p>Chef à la Card ist das Spiel, das dich vom Sofa in die Küche lockt. Ob alleine oder in der  Gruppe, ob Einkaufsbummel oder Reste-Essen, mit Chef à la Card wirst du nie wieder einfallslos vor deinem Herd stehen und in leere Töpfe starren. Mit über 60 unterschiedlichen Zutaten und neun Zubereitungsmethoden wird eine nahezu unerschöpfliche Quelle an Kombinationsmöglichkeiten für neue Rezepte geboten und eine unbekannte Welt der kulinarischen Wunder eröffnet.</p>
 
 				<div>
 					<img class="calc_testimonials_mohltied" src="images/calc_testimonial_mohltied-magazin.png" alt="">
@@ -148,7 +144,9 @@
 
 			</header>
 
-			<form method="post" action="mail_handler.php">
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+			<form id="email_id" method="post" target="hidden_iframe">
 				
 				<div class="row gtr-uniform">
 				
@@ -183,18 +181,49 @@
 
 			<div id="myModal_email" class="modal_email">
 				
-				<div class="modal-content_email">
+				< class="modal-content_email">
 				 
 					<span class="close_email">&times;</span>
 				 
 				  <header class="major_email">
 					<h2>Deine Mail wurde versendet.</h2>
 				  </header>
+
+				  <img class="email_cube_message" src="images/email_cube_message_small.png" alt="">
 				  
 				  <p>Vielen Dank für deine Nachricht. Wir melden uns so schnell es geht bei dir.</p>
 
 				</div>
 			</div>
+
+			<!--/********************************************************************************* */
+			    /*                                                                                 */
+			    /*                                   PHP code                                      */
+			    /*                                                                                 */
+			    /********************************************************************************* */-->
+
+			<?php
+				// Get data from form  
+				$name = $_POST['name'];
+				$email= $_POST['email'];
+				$message= $_POST['message'];
+
+				$to = "mahr.micha@gmail.com";
+				$subject = "Mail from barefoot contact form";
+
+				// The following text will be sent
+				// Name = user entered name
+				// Email = user entered email
+				// Message = user entered message 
+				$txt = $name . " schreibt uns.". "\r\nSeine/Ihre Email: "
+				    . $email . "\r\nNachricht:" . "\r\n\r\n" . $message;
+
+				$headers = "From: info@barefoot-games.com";
+				if($email != NULL) {
+				    mail($to, $subject, $txt, $headers);
+				}
+
+			?>
 
 		</div>
 
@@ -534,6 +563,9 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/index.js"></script>
 	<script src="assets/js/main_video.js"></script>
+
+
+
 
 </body>
 

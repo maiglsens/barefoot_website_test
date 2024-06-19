@@ -1,5 +1,4 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,800");
 
 /*
 	Highlights by Pixelarity
@@ -224,13 +223,13 @@ a {
 	-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	/* border-bottom: dotted 1px;     Hab ich rausgenommen, da es eine gestrichekte Linie unter die Links gesetzt hat */
-	color: #8cd1a8;
+	color: #61686b;
 	text-decoration: none;
 }
 
 a:hover {
 	border-bottom-color: transparent !important;
-	color: #8cd1a8 !important;
+	color: #C6A919 !important;
 	text-decoration: none;
 }
 
@@ -393,7 +392,9 @@ pre code {
 	width: 100%;
 }
 
-@media screen and (max-width: 980px) {
+/* I took out both  @medias because I wanted to have the scrolldown button on the landing page beeing displayed in the middle of the screen. These settings somehow screwed it up. */
+
+/* @media screen and (max-width: 980px) {
 
 	.container {
 		width: 80% !important;
@@ -408,7 +409,7 @@ pre code {
 		width: 100% !important;
 	}
 
-}
+} */
 
 /* Row */
 
@@ -2098,13 +2099,13 @@ form {
 	margin: 0 0 2em 0;
 }
 
-label {
+/* label {
 	color: #61686b;
 	display: block;
 	font-size: 0.9em;
 	font-weight: 700;
 	margin: 0 0 1em 0;
-}
+} */
 
 input[type="text"],
 input[type="password"],
@@ -2176,7 +2177,7 @@ textarea {
 	padding: 0.75em 1em;
 }
 
-input[type="checkbox"],
+/* input[type="checkbox"],
 input[type="radio"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -2215,9 +2216,9 @@ input[type="radio"]+label:before {
 	text-transform: none !important;
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
-}
+} */
 
-input[type="checkbox"]+label:before,
+/* input[type="checkbox"]+label:before,
 input[type="radio"]+label:before {
 	background: rgba(144, 144, 144, 0.15);
 	content: '';
@@ -2242,7 +2243,7 @@ input[type="radio"]:checked+label:before {
 input[type="checkbox"]:focus+label:before,
 input[type="radio"]:focus+label:before {
 	box-shadow: inset 0 0 0 2px #8cd1a8;
-}
+} */
 
 input[type="radio"]+label:before {
 	border-radius: 100%;
@@ -3000,11 +3001,17 @@ button:disabled,
 #footer footer {
 	top: 2em;
 	bottom: 2em;
-	color: rgba(0, 0, 0, 0.5);
+	color: white;
 	left: 0;
 	position: absolute;
 	text-align: center;
 	width: 100%;
+}
+
+@media (max-width: 980px) {
+	#footer footer {
+		color: #61686b;
+	}
 }
 
 #footer footer h1,
@@ -3082,6 +3089,16 @@ button:disabled,
 		margin: 0 0 4em 0;
 	}
 
+	.main .image.pizza {
+		display: none;
+		margin: 0 0 4em 0;
+	}
+
+	.main .image.empress_two {
+		display: none;
+		margin: 0 0 4em 0;
+	}
+
 	.main .container {
 		padding: 3em 3em 8em 3em;
 	}
@@ -3125,7 +3142,7 @@ button:disabled,
 
 @media screen and (max-width: 736px) {
 
-	
+
 	/* Basic */
 
 	h2 {
@@ -3171,7 +3188,8 @@ button:disabled,
 	}
 
 	#header .container {
-		display: none;
+		display: block;
+		/* hier habe ich selbst von none auf block geändert, um den scrolldown button auf der landing page darzustellen */
 	}
 
 	/* Footer */
@@ -3292,7 +3310,371 @@ button:disabled,
 
 }
 
-/* Scroll Down Button */
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                    Navbar                                       */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+:root {
+	--background-color: white;
+	--darker-background-color: #fff09e;
+	--accent-color: #d3b81e;
+	--text-color: #61686b;
+	--navbar-height: 90px;
+}
+
+nav {
+	position: fixed;
+	height: var(--navbar-height);
+	width: 35em;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: var(--background-color);
+	backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 3;
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+nav a.logo {
+	display: flex;
+	align-items: center;
+}
+
+nav .logo img {
+	max-height: 75px;
+	margin-left: 3.8em;
+}
+
+nav label.toggle_button {
+	align-items: center;
+}
+
+nav ul {
+	height: 100%;
+	margin-bottom: 0;
+	margin-right: 30px;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	list-style: none;
+}
+
+nav li {
+	height: 100%;
+	width: 8.3rem;
+	padding: 0;
+	text-align: center;
+	position: relative;
+}
+
+nav li:hover {
+	color: var(--text-color);
+	background: var(--accent-color);
+}
+
+nav ul a {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.dropdown {
+	height: min-content;
+	width: 200px;
+	background: var(--background-color);
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: var(--navbar-height);
+	padding-left: 0;
+}
+
+.dropdown li {
+	height: 70px;
+	width: 100%;
+	padding-left: 0;
+}
+
+.dropdown li a {
+	justify-content: flex-start;
+	padding-left: 15px;
+}
+
+nav li:hover .dropdown {
+	display: flex;
+}
+
+nav input[type="checkbox"] {
+	display: none;
+}
+
+.expandable_li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.toggle_button {
+	width: 30px;
+	height: 23px;
+	position: absolute;
+	right: 3.8em;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+nav label.toggle_button:hover {
+	cursor: pointer;
+
+	.bar {
+		background: var(--accent-color);
+	}
+}
+
+.bar {
+	height: 4px;
+	width: 100%;
+	background: var(--text-color);
+	border-radius: 100px;
+}
+
+
+
+@media(max-width: 1680px) {
+	.toggle_button {
+		display: flex;
+	}
+
+	
+
+	nav ul {
+		height: min-content;
+		width: 100%;
+		background: var(--background-color);
+		display: none;
+		position: absolute;
+		top: var(--navbar-height);
+	}
+
+	nav li {
+		height: min-content;
+		width: 100%;
+	}
+
+	nav ul a {
+		padding: 30px 0;
+	}
+
+	.expandable_li {
+		display: block;
+	}
+
+	.expandable_li label {
+		padding: 30px 0;
+		cursor: pointer;
+		display: block;
+	}
+
+	.expandable_li:hover .dropdown {
+		display: none;
+	}
+
+	.expandable_li input[type="checkbox"]:checked~.dropdown {
+		display: block;
+	}
+
+	.dropdown {
+		position: static;
+		width: 100%;
+	}
+
+	.dropdown li {
+		padding: 0;
+		display: block;
+		position: static;
+		background: var(--darker-background-color);
+	}
+
+	.dropdown li a {
+		width: 100%;
+		padding: 0;
+		justify-content: center;
+	}
+
+	#toggle_button:checked~ul {
+		display: block;
+	}
+}
+
+@media (max-width: 980px) {
+	nav {
+		width: 70%;
+	}
+}
+
+@media (max-width: 736px) {
+	nav {
+		width: 100%;
+	}
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                            Videos - big play button                             */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.playButton {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 80px;
+	color: rgba(211, 184, 30, 0.8);
+	background: white;
+	border-radius: 50%;
+	width: 76px;
+	height: 76px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+@media (max-width: 980px) {
+	.playButton {
+		display: none;
+	}
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*               Padding bottom beneath contact info at bottom page                */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.contact_end {
+	padding-bottom: 2em;
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                               Header Calc section                               */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.main_header_calc{
+	margin-bottom: 3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CalC landing page */
+
+/* .responsive_logo_calc {
+    height: 100%;
+    object-fit: cover; 
+    width: 100%; 
+}
+
+
+.calc_testimonials_mohltied {
+	width: 90%;
+	margin-bottom: 5em;
+	margin-top: 4em;
+}
+
+
+@media (max-width: 980px) {
+	.calc_testimonials_mohltied{
+		width: 100%;
+	}
+} */
+
+
+/* Landing page Impressum */
+
+
+/* .impressum_top {
+	margin-right: 1em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+}
+
+@media (max-width: 1500px) {
+	.impressum_top {
+		display: none;
+	}
+} */
+
+
+/* Impressum & Datenschutz Button und Text */
+
+/* .impressum_datenschutz_btn {
+	color: white;
+}
+
+@media (max-width: 980px) {
+	.impressum_datenschutz_btn {
+		color: var(--text-color);
+	}
+}
+
+.impressum_text {
+	color: var(--text-color);
+} */
+
+
+
+
+
+
+
+
+/* Scroll Down Button
 
 .demo a {
 	position: absolute;
@@ -3308,6 +3690,7 @@ button:disabled,
 	text-decoration: none;
 	transition: opacity .3s;
 }
+
 
 .demo a:hover {
 	opacity: .5;
@@ -3332,6 +3715,7 @@ button:disabled,
 	animation: sdb04 2s infinite;
 	box-sizing: border-box;
 }
+
 
 @-webkit-keyframes sdb04 {
 	0% {
@@ -3362,15 +3746,18 @@ button:disabled,
 }
 
 
+ */
+
+
 
 
 /* video 16:9 ratio */
 
-.videoplayer {
+/* .videoplayer {
 	position: relative;
 	height: 0;
 	padding-bottom: 56.25%;
-	margin-top: 1em;
+	margin-top: 5em;
 	margin-bottom: 6em;
 }
 
@@ -3380,22 +3767,25 @@ button:disabled,
 	left: 0;
 	width: 100%;
 	height: 100%;
-}
-
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+} */
 
 
 /* Responsive image CalC */
 
-.responsive {
+/* .responsive {
 	width: 100%;
 	height: auto;
 	margin-bottom: 5em;
-}
+} */
 
 
 /* Responsive image logo */
 
-.responsive_logo {
+/* .responsive_logo {
+	position: relative;
+	display: inline-block;
 	width: 100%;
 	height: auto;
 	object-fit: contain;
@@ -3406,67 +3796,85 @@ button:disabled,
 	display: flex;
 	justify-content: center;
 	text-align: center;
-}
+	background: rgb(255, 255, 255);
+	position: relative; /* This is needed to contain the image */
+    /* overflow: hidden; This will hide the overflow
+} */
 
 
 /* Responsive images portraits */
 
-.responsive_portrait {
+/* .responsive_portrait {
 	width: 35%;
 	height: auto;
 
 	margin-top: 3em;
 	border-radius: 50%;
-}
+} */
 
 
 /* das sind wir margins */
 
-.dassindwir {
+/* .dassindwir {
 	margin-bottom: 2em;
-}
+} */
 
 
 
 
 /* Modal Pop up 'Impressum und Datenschutz' */
 
-/* The Modal (background) */
+/* The Modal (background)
 .modal {
 	display: none;
-	/* Hidden by default */
+
 	position: fixed;
-	/* Stay in place */
+	
 	z-index: 1;
-	/* Sit on top */
+	
 	left: 0;
 	top: 0;
 	width: 100%;
-	/* Full width */
+
 	height: 100%;
-	/* Full height */
+
 	overflow: auto;
-	/* Enable scroll if needed */
+	
 	background-color: rgb(0, 0, 0);
-	/* Fallback color */
+	
 	background-color: rgba(0, 0, 0, 0.4);
-	/* Black w/ opacity */
-}
+	
+	color: #61686b;
+} */
 
 /* Modal Content/Box */
-.modal-content {
+/* .modal-content {
 	background-color: #fefefe;
-	margin: 15% auto;
-	/* 15% from the top and centered */
+	margin: 10% auto;
+	
 	padding: 20px;
 	border: 1px solid #888;
 	width: 40%;
-	/* Could be more or less, depending on screen size */
+	
 	border-radius: 1em;
 }
 
+@media (max-width: 1680px) {
+	.modal-content {
+		width: 70%;
+		margin: 25% auto;
+	}
+}
+
+@media (max-width: 980px) {
+	.modal-content {
+		width: 100%;
+		margin: 25% auto;
+	}
+} */
+
 /* The Close Button */
-.close {
+/* .close {
 	color: #aaa;
 	float: right;
 	font-size: 28px;
@@ -3478,7 +3886,16 @@ button:disabled,
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
-}
+} */
+
+
+
+
+
+
+
+
+
 
 /* The button over image for google maps*/
 
@@ -3505,6 +3922,7 @@ button:disabled,
 	from {
 		transform: translateX(0);
 	}
+
 	to {
 		transform: translateX(-100%);
 	}
@@ -3535,120 +3953,31 @@ button:disabled,
 
 /* CalC button */
 
-.calc_button {
-	background-color: #e4e4e4;
-}
+/* .calc_button {
+	background-color: #C6A919;
+	color: white;
+	border-radius: 20px;
+	width: 9em;
+} */
 
 
-
-
-/* Burger Menu */
-
-/*.nav-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    position: relative;
-    background-color: var(--color2);
-    padding: 12px 20px;
-}
-.logo img {width: 40px;}
-.menu {display: flex;}
-.menu li {padding-left: 30px;}
-.menu li a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color1);
-    text-align: center;
-    transition: 0.15s ease-in-out;
-    position: relative;
-    text-transform: uppercase;
-}
-.menu li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--color1);
-    transition: 0.15s ease-in-out;
-}
-.menu li a:hover:after {width: 100%;}
-.open-menu , .close-menu {
-    position: absolute;
-    color: var(--color1);
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: none;
-}
-.open-menu {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-.close-menu {
-    top: 20px;
-    right: 20px;
-}
-#check {display: none;}
-
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--color2);
-        transition: all 0.2s ease-in-out;
-    }
-    .menu li {margin-top: 40px;}
-    .menu li a {padding: 10px;}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;}
-	*/
 
 
 /* Webfont */
 
 /* noto-serif-600 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Noto Serif';
-    font-style: normal;
-    font-weight: 600;
-    src: url('../assets/noto-serif-v23-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+/* @font-face {
+	font-display: swap;
 
-  .header_style_noto {
+	font-family: 'Noto Serif';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/noto-serif-v23-latin-600.woff2') format('woff2');
+	
+}
+
+.header_style_noto {
 	font-family: Noto serif, serif;
 	font-size: 25px;
 	font-weight: 600;
-  }
-
-  /* Navigation bar*/
-
-  .navbar {
-	position: fixed;
-	max-height: 10px;
-	max-width: calc(100% - 4em);
-	width: 35em;
-	padding: 5em 2.5em 8em 2.5em;
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	background: red;
-  }
-
-  .navbar_links {
-	display: flex;
-	justify-content: center;
-
-  }
+} */

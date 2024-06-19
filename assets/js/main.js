@@ -26,8 +26,8 @@
 		});
 
 	// Touch mode.
-		if (browser.mobile) {
-
+		if (false) {
+		//"if (browser.mobile)" was the original. I changed to false to make navbar on mobile devices visible.
 			var $wrapper;
 
 			// Create wrapper.
@@ -162,8 +162,8 @@
 				$this.scrollex({
 					mode: 'top',
 					delay: 10,
-					top: '-1vh',
-					bottom: '-1vh',
+					top: '-50vh',
+					bottom: '-50vh',
 					init: function() { $bg.removeClass('active'); },
 					enter: function() { $bg.addClass('active'); },
 					leave: function() { $bg.removeClass('active'); }
@@ -182,36 +182,3 @@ $(function() {
 	  $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
 	});
   });
-
-
-
-
-  
-// Modal Pop up 'Impressum und Datenschutz' 
-
-
-  // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}

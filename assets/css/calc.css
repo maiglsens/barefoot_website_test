@@ -1,3 +1,73 @@
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                             Scroll down button                                  */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+#scrolldownbutton_calc a {
+	padding-top: 60px;
+}
+
+#scrolldownbutton_calc a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	border-left: 2px solid #ffffff;
+	border-bottom: 2px solid #ffffff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: sdb04 2s infinite;
+	animation: sdb04 2s infinite;
+	box-sizing: border-box;
+}
+
+@media (max-width: 980px) {
+	#scrolldownbutton_calc a span {
+		border-left: 2px solid #ffffff;
+		border-bottom: 2px solid #ffffff;
+	}
+}
+
+
+@-webkit-keyframes sdb04 {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+	}
+
+	20% {
+		-webkit-transform: rotate(-45deg) translate(-10px, 10px);
+	}
+
+	40% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+	}
+}
+
+@keyframes sdb04 {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+
+	20% {
+		transform: rotate(-45deg) translate(-10px, 10px);
+	}
+
+	40% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+}
+
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                    Webfont                                      */
+/*                                                                                 */
+/* ******************************************************************************* */
+
 /* Webfont */
 
 /* noto-serif-600 - latin */
@@ -9,29 +79,43 @@
     src: url('../assets/noto-serif-v23-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+.header_style_noto {
+	font-family: Noto serif, serif;
+	font-size: 25px;
+	font-weight: 600;
+}
 
-/*CalC top banner on CalC site */
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                Landing page image                               */
+/*                                                                                 */
+/* ******************************************************************************* */
 
-/*.calc_banner {
-	display: block;
-	overflow: hidden;
+.section_height {
+	height: 100%;
+	display: flex;
+	justify-content: center;
 	text-align: center;
+	background: rgb(255, 255, 255);
+	position: relative; /* This is needed to contain the image */
+    overflow: hidden; /* This will hide the overflow */
 }
 
-.calc_banner_img {	
-	min-height: 8em;
-	max-height: 15em;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-}*/
-
-.calc_header_img {
-    max-width: 20em;
-    margin-bottom: 15%;
+.responsive_logo_calc {
+    height: 100%;
+    object-fit: cover; /* This will make the image cover the full height */
+    width: 100%; /* This will make the image cover the full width */
 }
 
-/* Header font */
+
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                   Header font                                   */
+/*                                                                                 */
+/* ******************************************************************************* */
+
 
 .calc_font_noto {
     font-family: Noto Serif, serif;
@@ -41,4 +125,375 @@
 .calc_line_spacing_250 {
     line-height: 250%;
     margin-bottom: 15%;
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                     Modal Pop up 'Impressum und Datenschutz'                    */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+/* The Modal (background) */
+.modal_calc_impressum {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
+	color: #61686b;
+}
+
+/* Modal Content/Box */
+.modal-content_impressum {
+	background-color: #fefefe;
+	margin: 10% auto;
+	/* 15% from the top and centered */
+	padding: 5% 10%;
+	border: 1px solid #888;
+	width: 70%;
+	/* Could be more or less, depending on screen size */
+	border-radius: 1em;
+}
+
+@media (max-width: 1680px) {
+	.modal-content_impressum {
+		width: 70%;
+		margin: 25% auto;
+	}
+}
+
+@media (max-width: 980px) {
+	.modal-content_impressum {
+		width: 100%;
+		margin: 25% auto;
+        padding: 10%;
+	}
+}
+
+/* The Close Button */
+.close_calc_impressum {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close_calc_impressum:hover,
+.close_calc_impressum:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Impressum at top of landing page */
+
+
+.impressum_top_calc {
+	margin-right: 1em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+    color: white;
+}
+
+
+
+/* Impressum & Datenschutz Button und Text */
+
+ .impressum_datenschutz_btn {
+	color: white;
+}
+
+@media (max-width: 980px) {
+	.impressum_datenschutz_btn {
+		color: var(--text-color);
+	}
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                   Testimonials                                  */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+
+.calc_testimonials_dumee{
+    width: 81%;
+    margin-bottom: 4em;
+    margin-top: 4em;
+}
+
+.calc_testimonials_mummy{
+    width: 68%;
+    margin-bottom: 4em;
+    margin-top: 4em;
+}
+
+.calc_testimonials_mohltied{
+    width: 100%;
+    margin-bottom: 5em;
+}
+
+@media (max-width: 980px) {
+	
+	.calc_testimonials_dumee{
+		width: 100%;
+	}
+
+	.calc_testimonials_mummy{
+		width: 85%;
+	}
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                      CalC small images in between text                          */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.calc_empty_pot{
+    width: 50%;
+    margin-bottom: 2em;
+    margin-top: 3em;
+}
+
+.calc_jury{
+    width: 90%;
+    margin-bottom: 2em;
+    margin-top: 3em;
+}
+
+@media (max-width: 980px) {
+	
+	.calc_empty_pot{
+		width: 70%;
+	}
+	.calc_jury{
+		width: 100%;
+	}
+
+}
+
+.calc_game{
+    width: 120%;
+    margin-top: 5em;
+    margin-left: -10%;
+}
+
+.calc_boxes{
+	width: 70%;
+	margin-top: 5em;
+}
+
+.calc_box_back{
+	width: 50%;
+	margin-top: 7em;
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                             Modal Pop up 'Rules'                                */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.modal_calc_rules {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
+	color: #61686b;
+}
+
+/* Modal Content/Box */
+.modal-content_calc_rules {
+	background-color: #fefefe;
+	margin: 25% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 60%;
+	/* Could be more or less, depending on screen size */
+	border-radius: 1em;
+}
+
+@media (max-width: 1680px) {
+	.modal-content_rules {
+		width: 70%;
+		margin: 25% auto;
+	}
+}
+
+@media (max-width: 980px) {
+	.modal-content_rules {
+		width: 100%;
+		margin: 25% auto;
+	}
+
+	.modal-content_calc_rules {
+		width: 100%;
+	}
+}
+
+/* The Close Button */
+.close_calc_rules {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close_calc_rules:hover,
+.close_calc_rules:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                   CalC rules                                    */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.calc_rules_button{
+    width: 50%;
+    padding: 0;
+    margin-top: 4em;
+}
+
+.calc_rules_btn_image{
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.calc_rules_popup_image{
+    width: 100%;
+    height: 100%;
+}
+
+.hier_klicken_calc_rules{
+    width: 50%;
+    margin-left: 45%;
+    margin-top: -1.5em;
+}
+
+
+
+
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                               CalC content list                                 */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.calc_contents{
+    margin-top: 4em;
+}
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                            Video player play button                             */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+:root {
+	--background-color: white;
+	--darker-background-color: #fff09e;
+	--accent-color: rgb(211, 184, 30);
+	--text-color: #61686b;
+	--navbar-height: 90px;
+}
+
+.playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgba(211,184,30,0.8);
+    background: white;
+    border-radius: 50%;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* disable yellow video play button when below 980px */
+
+@media (max-width: 980px) {
+    .playButton{
+        display: none;
+    }
+}
+
+
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                video 16:9 ratio                                 */
+/*                                                                                 */
+/* ******************************************************************************* */
+
+
+.videoplayer {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%;
+	margin-top: 5em;
+	margin-bottom: 6em;
+}
+
+.youtubevideo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
 }
