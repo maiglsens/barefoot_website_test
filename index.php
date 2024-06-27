@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="assets/css/index.css" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<link rel="stylesheet" href="assets/altcha/altcha.css" />
+	<script async defer src="assets/altcha/altcha.js" type="module"></script>
+	<script src="assets/altcha/worker.js"></script>
 
 </head>
 
@@ -36,7 +39,7 @@
 
 	<div>
 		<nav>
-			<a class="logo" href="https://barefoot-games.com"><img src="images/logo_fuss_100x147.png"
+			<a class="logo" href="#"><img src="images/logo_fuss_100x147.png"
 					alt="barefoot games logo of a foot stepping on a yellow die"></a>
 			<input type="checkbox" id="toggle_button">
 			<label for="toggle_button" class="toggle_button">
@@ -45,7 +48,7 @@
 				<span class="bar"></span>
 			</label>
 			<ul>
-				<li><a href="https://barefoot-games.com">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li class="expandable_li">
 					<input type="checkbox" id="spiele_checkbox">
 					<label for="spiele_checkbox">Spiele</label>
@@ -170,6 +173,9 @@
 				
 					<div class="col-12">
 				
+						<altcha-widget id=altcha challengeurl="https://eu.altcha.org/api/v1/challenge?		apiKey=ckey_016d56c12bdf5ec2f1fe989b01f5">
+						</altcha-widget>
+
 						<ul class="actions special">
 							<button type="submit" id="email_send_button" class="email_button" disabled>Senden</button>
 						</ul>
@@ -181,17 +187,18 @@
 
 			<div id="myModal_email" class="modal_email">
 				
-				< class="modal-content_email">
+				<div class="modal-content_email">
 				 
 					<span class="close_email">&times;</span>
 				 
 				  <header class="major_email">
-					<h2>Deine Mail wurde versendet.</h2>
+					<h2>Versendet ...</h2>
 				  </header>
 
 				  <img class="email_cube_message" src="images/email_cube_message_small.png" alt="">
 				  
-				  <p>Vielen Dank für deine Nachricht. Wir melden uns so schnell es geht bei dir.</p>
+				  <p>Vielen Dank für deine Nachricht.<br>Wir melden uns so schnell es geht bei dir.</p>
+				  
 
 				</div>
 			</div>
@@ -203,26 +210,29 @@
 			    /********************************************************************************* */-->
 
 			<?php
-				// Get data from form  
-				$name = $_POST['name'];
-				$email= $_POST['email'];
-				$message= $_POST['message'];
+			    // Get data from form  
+			    $name = $_POST['name'];
+			    $email= $_POST['email'];
+			    $message= $_POST['message'];
 
-				$to = "mahr.micha@gmail.com";
-				$subject = "Mail from barefoot contact form";
+			    $to = "mahr.micha@gmail.com";
+			    $subject = "Mail from barefoot contact form";
 
-				// The following text will be sent
-				// Name = user entered name
-				// Email = user entered email
-				// Message = user entered message 
-				$txt = $name . " schreibt uns.". "\r\nSeine/Ihre Email: "
-				    . $email . "\r\nNachricht:" . "\r\n\r\n" . $message;
+			    // The following text will be sent
+			    // Name = user entered name
+			    // Email = user entered email
+			    // Message = user entered message 
+			    $txt = $name . " schreibt uns.". "\r\nSeine/Ihre Email: "
+			        . $email . "\r\nNachricht:" . "\r\n\r\n" . $message;
 
-				$headers = "From: info@barefoot-games.com";
-				if($email != NULL) {
-				    mail($to, $subject, $txt, $headers);
-				}
-
+			    $headers = "From: info@barefoot-games.com";
+			    if($email != NULL) {
+			        if(mail($to, $subject, $txt, $headers)){
+			            echo "success";
+			        } else {
+			            echo "error";
+			        }
+			    }
 			?>
 
 		</div>

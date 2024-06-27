@@ -77,18 +77,6 @@ window.onclick = function(event) {
 /********************************************************************************* */
 
 
-// function success() {
-//     var name = document.getElementById('name').value;
-//     var email = document.getElementById('email').value;
-//     var message = document.getElementById('message').value;
-
-//     if(name !== "" && email !== "" && message !== "") {
-//         document.getElementById('email_send_button').disabled = false;
-//     } else {
-//         document.getElementById('email_send_button').disabled = true;
-//     }
-// }
-
 window.onload = success;
 
 function success() {
@@ -118,29 +106,49 @@ document.getElementById('email_send_button').addEventListener('click', function(
   var message = document.getElementById('message').value;
 
   if(name !== "" && email !== "" && message !== "") {
-    // Show the modal
-    var modal_email = document.getElementById('myModal_email');
-    modal_email.style.display = "block";
+      // Create a FormData object
+      var formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('message', message);
 
-    // Get the <span> element that closes the modal
-    
-    var span_email = document.getElementsByClassName("close_email")[0];
+      // Create an AJAX request
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'index.php', true);
 
-    // When the user clicks on <span> (x), close the modal
+      // When the request is loaded
+      xhr.onload = function () {
+          if (xhr.status === 200) {
+            // Log the response text
+             console.log(xhr.responseText);
+              // If the mail was sent successfully, show the modal
+              // if(xhr.responseText.trim() === "success") {
+                  var modal_email = document.getElementById('myModal_email');
+                  modal_email.style.display = "block";
 
-    span_email.onclick = function() {
-      modal_email.style.display = "none";
-    }
+                  // Get the <span> element that closes the modal
+                  var span_email = document.getElementsByClassName("close_email")[0];
 
-    // When the user clicks anywhere outside of the modal, close it
+                  // When the user clicks on <span> (x), close the modal
+                  span_email.onclick = function() {
+                      modal_email.style.display = "none";
+                  }
 
-    window.onclick = function(event) {
-      if (event.target == modal_email) {
-        modal_email.style.display = "none";
-      }
-    }
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                      if (event.target == modal_email) {
+                          modal_email.style.display = "none";
+                      }
+                  }
+              // }
+          }
+      };
+
+      // Send the AJAX request
+      xhr.send(formData);
   }
 });
+
 
 
 /********************************************************************************* */

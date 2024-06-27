@@ -166,3 +166,38 @@ document.addEventListener("DOMContentLoaded", function() {
 	  modal_calc_rules.style.display = "none";
 	}
   }
+
+
+
+
+  /********************************************************************************* */
+  /*                                                                                 */
+  /*                             Modal Popup moving images                           */
+  /*                                                                                 */
+  /********************************************************************************* */
+
+
+  window.onload = function() {
+    var images = document.querySelectorAll('.moving_images_calc_single img');
+    var modal = document.getElementById('myModal_calc_moving_images');
+    var modalImage_calc_moving = document.getElementById('modalImage_calc_moving');
+    var closeBtn = document.querySelector('.close_calc_moving_images');
+  
+    for (var i = 0; i < images.length; i++) {
+      images[i].addEventListener('click', function() {
+        modal.style.display = 'block';
+        modalImage_calc_moving.src = this.src;
+      });
+    }
+  
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  };
+  

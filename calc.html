@@ -34,7 +34,7 @@
 
 	<div>
 		<nav>
-			<a class="logo" href="index.html#header"><img src="images/logo_fuss_100x147.png" alt="barefoot games logo of a foot stepping on a yellow die"></a>
+			<a class="logo" href="https://barefoot-games.com"><img src="images/logo_fuss_100x147.png" alt="barefoot games logo of a foot stepping on a yellow die"></a>
 			<input type="checkbox" id="toggle_button">
 			<label for="toggle_button" class="toggle_button">
 				<span class="bar"></span>
@@ -42,7 +42,7 @@
 				<span class="bar"></span>
 			</label>
 			<ul>
-				<li><a href="index.html#header">Home</a></li>
+				<li><a href="https://barefoot-games.com">Home</a></li>
 				<li><a class="scrolly" href="#one">Über das Spiel</a></li>
 				<li><a class="scrolly" href="#two">Videos</a></li>
 				<li><a class="scrolly" href="#three">Regeln</a></li>
@@ -121,12 +121,36 @@
                 <p><img src="images/calc_playtime.png" width="140px"></p>
                 <p><img src="images/calc_age.png" width="140px"></p>
 
+<!-- /********************************************************************************* */
+/*                                                                                 */
+/*                             moving images                                  */
+/*                                                                                 */
+/********************************************************************************* */
+				 -->
                 
-				<div><img class="calc_boxes" src="images/calc_multiple_small.png" alt=""></div>
+	
 
-				<div><img class="calc_box_back" src="images/calc_back_small.png" alt=""></div>
-
-				<div><img class="calc_game" src="images/calc_game_cards_1000x1000px.png" alt=""></div>
+				<div class="moving_images_calc">
+					<div class="moving_images_calc_single">
+						<img src="images/calc_multiple_small.png" id="img1" />
+						<img src="images/calc_back_small.png" id="img2" />
+						<img src="images/calc_game_cards_1000x1000px.png" id="img3" />
+					</div>
+					<div class="moving_images_calc_single">
+						<img src="images/calc_multiple_small.png" id="img4" />
+						<img src="images/calc_back_small.png" id="img5" />
+						<img src="images/calc_game_cards_1000x1000px.png" id="img6" />
+					</div>
+				</div>
+				
+				<div id="myModal_calc_moving_images" class="modal_calc_moving_images">
+					<div class="modal-content_calc_moving_images">
+						<span class="close_calc_moving_images">×</span>
+						<img id="modalImage_calc_moving" style="width: 50%;" />
+					</div>
+				</div>
+				
+				
 
 			</div>
 		</div>

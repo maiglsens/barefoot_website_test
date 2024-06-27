@@ -358,7 +358,7 @@
 	/* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
-	width: 30%;
+	width: 20%;
 	/* Could be more or less, depending on screen size */
 	border-radius: 1em;
 }
@@ -396,5 +396,13 @@
 /* foot cube image */
 
 .email_cube_message{
-	width: 90%;
+	width: 60%;
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+/* Text */
+
+.major_email {
+	margin-top: 1.5em;
 }
